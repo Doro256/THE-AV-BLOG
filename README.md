@@ -5,7 +5,7 @@ A social blogging application made with Flask, a python microframework.
 
 This app is implemented based on miguelgrinberg O'Reilly book Flask Web Development
 
-Demo app: https://cslapp.herokuapp.com/
+Demo app: https://stupendous-rugelach-e126be.netlify.app/
 
 Here is the final blog article https://cslapp.herokuapp.com/
 
