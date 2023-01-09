@@ -4,6 +4,7 @@ from sqlalchemy.sql import func
 
 
 class User(db.Model, UserMixin):
+    """ Class that defines a user """
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     username = db.Column(db.String(150), unique=True)
@@ -15,6 +16,7 @@ class User(db.Model, UserMixin):
 
 
 class Post(db.Model):
+    """ Class that defines a post by a user """
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -25,6 +27,7 @@ class Post(db.Model):
 
 
 class Comment(db.Model):
+    """ Class that defines a comment by a user """
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -35,6 +38,7 @@ class Comment(db.Model):
 
 
 class Like(db.Model):
+    """ Class that defines a like by the user """
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now())
     author = db.Column(db.Integer, db.ForeignKey(

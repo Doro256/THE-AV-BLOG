@@ -1,3 +1,4 @@
+""" Initializing the app """
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
@@ -7,8 +8,9 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
+    """ Create flask application"""
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = "helloworld"
+    app.config['SECRET_KEY'] = "helloworld" #Configure flask variables
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
@@ -28,11 +30,13 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(id):
+        """Get user id"""
         return User.query.get(int(id))
 
     return app
 
 def create_database(app):
+    """ Create database of the app """
     if not path.exists("website/" + DB_NAME):
         
         with app.app_context():
