@@ -17,8 +17,8 @@ def create_app():
     from .views import views
     from .auth import auth
 
-    app.register_blueprint(views, url_prefix="/")
-    app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(views, url_prefix="/") # register views blueprint
+    app.register_blueprint(auth, url_prefix="/") # register auth blueprint
 
     from .models import Post, User, Comment, Like
 
