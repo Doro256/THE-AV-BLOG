@@ -1,4 +1,4 @@
-""" Contains all views related to the app """
+# Contains all views related to the app
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
@@ -17,7 +17,7 @@ def home():
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
-    """ Creates user post """
+    # Creates user post 
     if request.method == "POST":
         text = request.form.get('text')
 
@@ -36,7 +36,7 @@ def create_post():
 @views.route("/delete-post/<id>")
 @login_required
 def delete_post(id):
-    """ Deletes user post """
+    # Deletes user post 
     post = Post.query.filter_by(id=id).first()
 
     if not post:
@@ -54,7 +54,7 @@ def delete_post(id):
 @views.route("/posts/<username>")
 @login_required
 def posts(username):
-    """ Who created the post """
+    # Who created the post 
     user = User.query.filter_by(username=username).first()
 
     if not user:
@@ -69,7 +69,7 @@ def posts(username):
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
 def create_comment(post_id):
-    """ Create user comment"""
+    # Create user comment
     text = request.form.get('text')
 
     if not text:
@@ -90,7 +90,7 @@ def create_comment(post_id):
 @views.route("/delete-comment/<comment_id>")
 @login_required
 def delete_comment(comment_id):
-    """ Delete user comment"""
+    # Delete user comment
     comment = Comment.query.filter_by(id=comment_id).first()
 
     if not comment:
@@ -107,7 +107,7 @@ def delete_comment(comment_id):
 @views.route("/like-post/<post_id>", methods=['POST'])
 @login_required
 def like(post_id):
-    """ Like post"""
+    # Like post
     post = Post.query.filter_by(id=post_id).first()
     like = Like.query.filter_by(
         author=current_user.id, post_id=post_id).first()

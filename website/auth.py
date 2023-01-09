@@ -1,4 +1,4 @@
-""" File that authenticates the app """
+# File that authenticates the app 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db 
 from .models import User
@@ -9,7 +9,7 @@ auth = Blueprint("auth", __name__)
 
 @auth.route("/login", methods=['GET', 'POST'])
 def login():
-    """ Defines user login """
+    # Defines user login 
     if request.method == 'POST':
         email = request.form.get("email")
         password = request.form.get("password")
@@ -29,7 +29,7 @@ def login():
 
 @auth.route("/sign-up", methods=['GET', 'POST'])
 def sign_up():
-    """ Defines user sign up """
+    # Defines user sign up 
     if request.method == 'POST':
         email = request.form.get("email")
         username = request.form.get("username")
@@ -61,6 +61,6 @@ def sign_up():
 @auth.route("/logout")
 @login_required
 def logout():
-    """ Defines user logout """
+    # Defines user logout 
     logout_user()
     return redirect(url_for("views.home"))

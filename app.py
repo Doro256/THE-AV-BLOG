@@ -1,4 +1,4 @@
-""" Entry point for the app """
+# Entry point for the app 
 from website import create_app
 
 if __name__ == "__main__":
