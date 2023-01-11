@@ -7,7 +7,6 @@ This app is implemented based on miguelgrinberg O'Reilly book Flask Web Developm
 
 Demo app: https://stupendous-rugelach-e126be.netlify.app/
 
-Here is the final blog article https://cslapp.herokuapp.com/
 
 ## Authors
 
