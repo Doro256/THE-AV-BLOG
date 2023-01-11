@@ -3,8 +3,6 @@
 
 A social blogging application made with Flask, a python microframework.
 
-This app is implemented based on miguelgrinberg O'Reilly book Flask Web Development
-
 Demo app: https://stupendous-rugelach-e126be.netlify.app/
 
 
